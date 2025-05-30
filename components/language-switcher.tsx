@@ -19,6 +19,14 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
 
   const switchLanguage = (newLang: string) => {
     if (!mounted) return
+
+    // Handle special pages like study
+    if (pathname.includes("/study")) {
+      router.push(`/${newLang}/study`)
+      return
+    }
+
+    // Handle home page
     const newPathname = pathname.replace(`/${currentLang}`, `/${newLang}`)
     router.push(newPathname)
   }

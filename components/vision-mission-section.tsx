@@ -1,140 +1,135 @@
 "use client"
 
 import { Card, CardContent } from "@/components/ui/card"
-import { Lightbulb, Target, ArrowRight } from 'lucide-react'
+import { Lightbulb, Target, ArrowRight, CheckCircle } from 'lucide-react'
 import AnimatedSection from "./animated-section"
-import { Button } from "@/components/ui/button"
 
 interface VisionMissionSectionProps {
   dict: any
 }
 
 export default function VisionMissionSection({ dict }: VisionMissionSectionProps) {
+  // Vision key points
+  const visionPoints = [
+    "Building trust between Nepali students and Japanese institutions",
+    "Creating personalized educational pathways for each student",
+    "Establishing new standards in educational consultancy",
+    "Fostering cultural exchange and academic excellence"
+  ]
+
+  // Mission key points
+  const missionPoints = [
+    "Providing exceptional guidance with transparency",
+    "Maintaining highest ethical standards in all practices",
+    "Supporting students throughout their educational journey",
+    "Building Nepal's most reliable Japanese education consultancy"
+  ]
+
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-blue-200 rounded-full opacity-20 -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-200 rounded-full opacity-20 translate-x-1/3 translate-y-1/3"></div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <AnimatedSection animation="fadeIn">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Vision & Mission</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto"></div>
-            <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
-              We are dedicated to creating educational bridges between Nepal and Japan, fostering cultural exchange and academic excellence.
-            </p>
+    <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Vision Section */}
+        <div id="vision" className="mb-20">
+          <AnimatedSection animation="fadeIn">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">{dict.vision.title}</h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto"></div>
+            </div>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <AnimatedSection animation="slideLeft">
+              <div className="relative">
+                <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                  <img
+                    src="/placeholder.svg?height=500&width=500"
+                    alt="Vision"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-20 animate-pulse"></div>
+                <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-20 animate-bounce"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm rounded-full p-6 shadow-xl">
+                  <Lightbulb className="w-12 h-12 text-blue-600" />
+                </div>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection animation="slideRight">
+              <div>
+                <p className="text-xl text-gray-700 leading-relaxed mb-8">{dict.vision.content}</p>
+                
+                <div className="space-y-4">
+                  {visionPoints.map((point, index) => (
+                    <div key={index} className="flex items-start">
+                      <div className="flex-shrink-0 mt-1">
+                        <CheckCircle className="w-5 h-5 text-blue-600" />
+                      </div>
+                      <p className="ml-3 text-gray-700">{point}</p>
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="mt-8 p-4 bg-blue-50 border-l-4 border-blue-600 rounded-r-lg">
+                  <p className="text-blue-800 font-semibold italic">
+                    "Our vision is to become the bridge that transforms educational dreams into reality."
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
           </div>
-        </AnimatedSection>
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Vision Card */}
-          <AnimatedSection animation="slideLeft">
-            <Card className="overflow-hidden border-0 shadow-xl transition-all duration-500 h-full hover:shadow-2xl hover:-translate-y-1 group">
-              <div className="h-2 bg-gradient-to-r from-blue-500 to-cyan-500"></div>
-              <CardContent className="p-8">
-                <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mr-4 group-hover:bg-blue-600 transition-colors duration-300">
-                    <Lightbulb className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors duration-300" />
-                  </div>
-                  <h2 className="text-3xl font-bold text-gray-900">{dict.vision.title}</h2>
-                </div>
-                
-                <div className="space-y-4">
-                  <p className="text-lg text-gray-700 leading-relaxed">
-                    To become the premier educational bridge connecting Nepalese students with Japanese institutions, fostering a generation of global citizens equipped with cross-cultural understanding and academic excellence.
-                  </p>
-                  
-                  <div className="pl-6 border-l-4 border-blue-500 py-2">
-                    <h3 className="font-bold text-blue-700 mb-1">Our Long-term Vision</h3>
-                    <p className="text-gray-600">
-                      Creating lasting connections between Nepal and Japan through education, cultural exchange, and professional development.
-                    </p>
-                  </div>
-                  
-                  <ul className="space-y-2">
-                    <li className="flex items-start">
-                      <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                        <ArrowRight className="w-3 h-3 text-blue-600" />
-                      </div>
-                      <span>Establishing Nepal as a key source of talented students for Japanese universities</span>
-                    </li>
-                    <li className="flex items-start">
-                      <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                        <ArrowRight className="w-3 h-3 text-blue-600" />
-                      </div>
-                      <span>Building a network of alumni who contribute to both Nepalese and Japanese societies</span>
-                    </li>
-                    <li className="flex items-start">
-                      <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                        <ArrowRight className="w-3 h-3 text-blue-600" />
-                      </div>
-                      <span>Promoting Japanese language and culture throughout Nepal</span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <Button variant="ghost" className="mt-6 text-blue-600 hover:text-blue-700 hover:bg-blue-50 p-0 h-auto">
-                  Learn more about our vision
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </CardContent>
-            </Card>
+        {/* Mission Section */}
+        <div id="mission" className="pt-12">
+          <AnimatedSection animation="fadeIn">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">{dict.mission.title}</h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto"></div>
+            </div>
           </AnimatedSection>
 
-          {/* Mission Card */}
-          <AnimatedSection animation="slideRight">
-            <Card className="overflow-hidden border-0 shadow-xl transition-all duration-500 h-full hover:shadow-2xl hover:-translate-y-1 group">
-              <div className="h-2 bg-gradient-to-r from-purple-500 to-pink-500"></div>
-              <CardContent className="p-8">
-                <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 rounded-2xl bg-purple-100 flex items-center justify-center mr-4 group-hover:bg-purple-600 transition-colors duration-300">
-                    <Target className="w-8 h-8 text-purple-600 group-hover:text-white transition-colors duration-300" />
-                  </div>
-                  <h2 className="text-3xl font-bold text-gray-900">{dict.mission.title}</h2>
-                </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <AnimatedSection animation="slideLeft" className="order-2 lg:order-1">
+              <div>
+                <p className="text-xl text-gray-700 leading-relaxed mb-8">{dict.mission.content}</p>
                 
                 <div className="space-y-4">
-                  <p className="text-lg text-gray-700 leading-relaxed">
-                    To provide comprehensive, personalized guidance to Nepalese students seeking quality education in Japan, ensuring successful visa processing and a smooth transition to Japanese academic life.
-                  </p>
-                  
-                  <div className="pl-6 border-l-4 border-purple-500 py-2">
-                    <h3 className="font-bold text-purple-700 mb-1">Our Commitment</h3>
-                    <p className="text-gray-600">
-                      Delivering excellence in educational consultancy with integrity, transparency, and student-centered service.
-                    </p>
-                  </div>
-                  
-                  <ul className="space-y-2">
-                    <li className="flex items-start">
-                      <div className="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                        <ArrowRight className="w-3 h-3 text-purple-600" />
+                  {missionPoints.map((point, index) => (
+                    <div key={index} className="flex items-start">
+                      <div className="flex-shrink-0 mt-1">
+                        <ArrowRight className="w-5 h-5 text-purple-600" />
                       </div>
-                      <span>Providing expert guidance on university selection and application processes</span>
-                    </li>
-                    <li className="flex items-start">
-                      <div className="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                        <ArrowRight className="w-3 h-3 text-purple-600" />
-                      </div>
-                      <span>Offering comprehensive Japanese language preparation programs</span>
-                    </li>
-                    <li className="flex items-start">
-                      <div className="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                        <ArrowRight className="w-3 h-3 text-purple-600" />
-                      </div>
-                      <span>Ensuring seamless visa application and pre-departure support</span>
-                    </li>
-                  </ul>
+                      <p className="ml-3 text-gray-700">{point}</p>
+                    </div>
+                  ))}
                 </div>
                 
-                <Button variant="ghost" className="mt-6 text-purple-600 hover:text-purple-700 hover:bg-purple-50 p-0 h-auto">
-                  Learn more about our mission
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </CardContent>
-            </Card>
-          </AnimatedSection>
+                <div className="mt-8 p-4 bg-purple-50 border-l-4 border-purple-600 rounded-r-lg">
+                  <p className="text-purple-800 font-semibold italic">
+                    "Our mission is to provide exceptional guidance with unwavering dedication to each student's success."
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection animation="slideRight" className="order-1 lg:order-2">
+              <div className="relative">
+                <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+                  <img
+                    src="/placeholder.svg?height=500&width=500"
+                    alt="Mission"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-20 animate-pulse"></div>
+                <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-20 animate-bounce"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm rounded-full p-6 shadow-xl">
+                  <Target className="w-12 h-12 text-purple-600" />
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
         </div>
       </div>
     </section>
