@@ -1,8 +1,13 @@
 import { getDictionary } from "@/lib/dictionaries"
 import ClientWrapper from "@/components/client-wrapper"
 
-export default async function HomePage({ params }: { params: { lang: string } }) {
-  const dict = await getDictionary(params.lang)
+interface PageProps {
+  params: Promise<{ lang: string }>
+}
 
-  return <ClientWrapper dict={dict} currentLang={params.lang} />
+export default async function HomePage({ params }: PageProps) {
+  const { lang } = await params
+  const dict = await getDictionary(lang)
+
+  return <ClientWrapper dict={dict} currentLang={lang} />
 }

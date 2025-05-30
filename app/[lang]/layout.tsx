@@ -10,12 +10,12 @@ export async function generateStaticParams() {
   return [{ lang: "en" }, { lang: "ja" }]
 }
 
-export default function LangLayout({
-  children,
-  params,
-}: {
+interface LayoutProps {
   children: React.ReactNode
-  params: { lang: string }
-}) {
+  params: Promise<{ lang: string }>
+}
+
+export default async function LangLayout({ children, params }: LayoutProps) {
+  // We don't need to await params here since we're just passing children through
   return children
 }
