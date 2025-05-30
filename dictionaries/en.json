@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "vision": "Our Vision",
+    "mission": "Our Mission",
+    "services": "Our Services",
+    "team": "Our Team",
+    "guarantee": "Our Guarantee",
+    "testimonials": "Student Voice",
+    "success": "Our Success",
+    "principal": "Principal's Message",
+    "md": "MD's Message",
+    "gallery": "Photo Gallery",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Your Gateway to Japanese Education",
+    "subtitle": "Golkahikari Educational Consultancy",
+    "motto": "Bridging Dreams Between Nepal and Japan",
+    "cta": "Apply Now",
+    "description": "Expert guidance for Japanese college applications and study visa processing"
+  },
+  "about": {
+    "title": "About Golkahikari Educational Consultancy",
+    "content": "We are Nepal's premier educational consultancy specializing in Japanese higher education. With years of experience and deep understanding of both Nepali and Japanese educational systems, we guide students through every step of their journey to study in Japan. Our comprehensive approach ensures not just visa approval, but successful integration into Japanese academic and cultural life.",
+    "established": "Established in 2015",
+    "students": "500+ Students Placed",
+    "success": "95% Visa Success Rate"
+  },
+  "vision": {
+    "title": "Our Vision",
+    "content": "To become the leading bridge between Nepali students and Japanese educational institutions, fostering cultural exchange and academic excellence while building lifelong connections between Nepal and Japan. We envision a future where geographical boundaries don't limit educational aspirations, and where every deserving student has access to world-class Japanese education. Through our innovative approach and unwavering commitment, we aim to create a global network of successful alumni who contribute meaningfully to both societies."
+  },
+  "mission": {
+    "title": "Our Mission",
+    "content": "To provide comprehensive, personalized guidance to Nepali students seeking quality education in Japan, ensuring successful visa processing and smooth transition to Japanese academic life. We are committed to maintaining the highest standards of service, transparency, and ethical practices while continuously adapting to the evolving needs of international education. Our mission extends beyond placement – we nurture global citizens who embody the values of both cultures and contribute to international understanding and cooperation."
+  },
+  "services": {
+    "title": "Our Services",
+    "visa": {
+      "title": "Visa Processing",
+      "description": "Complete assistance with student visa applications and documentation"
+    },
+    "counseling": {
+      "title": "Educational Counseling",
+      "description": "Personalized guidance for choosing the right Japanese institution"
+    },
+    "application": {
+      "title": "Application Support",
+      "description": "End-to-end support for college and university applications"
+    },
+    "language": {
+      "title": "Language Preparation",
+      "description": "Japanese language training and JLPT preparation"
+    }
+  },
+  "testimonials": {
+    "title": "Student Voice",
+    "subtitle": "What Our Students Say"
+  },
+  "success": {
+    "title": "Our Success",
+    "subtitle": "Our Achievements and Impact"
+  },
+  "gallery": {
+    "title": "Photo Gallery",
+    "subtitle": "Moments from Our Journey"
+  },
+  "guarantee": {
+    "title": "Our Guarantee",
+    "content": "We promise transparent processes, dedicated support, and commitment to your success. Your dreams of studying in Japan are our responsibility. We guarantee honest guidance, timely processing, and continuous support throughout your educational journey. Our success is measured by your achievements, and we stand behind every service we provide with integrity and excellence."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "address": "Kathmandu, Nepal",
+    "phone": "+977-1-XXXXXXX",
+    "email": "info@golkahikari.com",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "message": "Message",
+      "submit": "Send Message"
+    }
+  }
+}
